@@ -4,9 +4,15 @@
 
 Developed with 💙 by [KodingWorks][kodingworks_link] 🦄
 
-![coverage][coverage_badge]
+[![Language][dart_language_badge]](http://dart.dev)
+[![Flutter Works][github_action_badge]][github_action_workflow_link]
+[![Codecov][codecov_badge]][codecov_link]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
+[![PRs Welcome][pr_welcome_badge]][repo_link]
+[![Stars][stars_badge]][repo_link]
+[![Stars][issues_badge]][repo_link]
+[![Stars][pull_request_badge]][repo_link]
 
 A FlutterWorks Flutter Starter Project created by the [KodingWorks Team][kodingworks_link].
 
@@ -156,13 +162,22 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 }
 ```
 
-[coverage_badge]: coverage_badge.svg
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
 [internationalization_link]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT
-[logo]: https://raw.githubusercontent.com/VeryGoodOpenSource/very_good_analysis/main/assets/vgv_logo.png
+[logo]: https://avatars.githubusercontent.com/u/57176505?s=200&v=4
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
 [kodingworks_link]: https://kodingworks.io
+[codecov_badge]: https://codecov.io/gh/wisnuwiry/flutter-starter/branch/main/graph/badge.svg
+[codecov_link]: https://codecov.io/gh/wisnuwiry/flutter-starter
+[repo_link]: https://github.com/wisnuwiry/flutter-starter
+[github_action_badge]: https://github.com/wisnuwiry/flutter-starter/actions/workflows/main.yaml/badge.svg
+[github_action_workflow_link]: https://github.com/wisnuwiry/flutter-starter/actions/workflows/main.yaml
+[stars_badge]: https://img.shields.io/github/stars/wisnuwiry/flutter-starter.svg?style=flat&logo=github&colorB=deeppink&label=Stars
+[issues_badge]: https://img.shields.io/github/issues/wisnuwiry/flutter-starter.svg?style=flat&logo=github&colorB=orange&label=Issues
+[pull_request_badge]: https://img.shields.io/github/issues-pr/wisnuwiry/flutter-starter.svg?style=flat&logo=github&colorB=brightgreen&label=Pull+Request
+[dart_language_badge]: https://img.shields.io/badge/Language-Dart-blue
+[pr_welcome_badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
