@@ -1,31 +1,71 @@
-// Copyright (c) 2021, KodingWorks
-// https://kodingworks.io
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_works/counter/counter.dart';
-import 'package:flutter_works/l10n/l10n.dart';
+import 'package:flutter_works/features/settings/settings.dart';
+import 'package:get_it/get_it.dart';
+
+import '../l10n/l10n.dart';
+import 'config.dart';
+import 'routes.gr.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  App({Key? key}) : super(key: key);
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        accentColor: const Color(0xFF13B9FF),
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor:
+            AppConfig.transparentStatusBar ? Colors.transparent : null,
       ),
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
+    );
+
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) =>
+              GetIt.I<ThemeBloc>()..add(InitializeThemeEvent()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              GetIt.I<LanguageBloc>()..add(InitializeLanguageEvent()),
+        ),
       ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      child: _AppWidget(router: _appRouter),
+    );
+  }
+}
+
+class _AppWidget extends StatelessWidget {
+  const _AppWidget({Key? key, required this.router}) : super(key: key);
+  final AppRouter router;
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<LanguageBloc, LanguageState>(
+      builder: (context, languageState) {
+        return BlocBuilder<ThemeBloc, ThemeState>(
+          builder: (context, themeState) {
+            return MaterialApp.router(
+              title: AppConfig.titleSiteWeb,
+              theme: themeState.theme,
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+              ],
+              locale: languageState.language != null
+                  ? Locale(languageState.language!.code)
+                  : null,
+              debugShowCheckedModeBanner: false,
+              supportedLocales: AppLocalizations.supportedLocales,
+              routerDelegate: router.delegate(),
+              routeInformationParser: router.defaultRouteParser(),
+            );
+          },
+        );
+      },
     );
   }
 }

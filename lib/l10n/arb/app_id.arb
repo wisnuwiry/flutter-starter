@@ -1,0 +1,9 @@
+{
+    "@@locale": "id",
+    "counterAppBarTitle": "Perhitungan",
+    "@counterAppBarTitle": {
+        "description": "Teks ditampilkan di AppBar dari Halaman Penghitung"
+    },
+    "pageNotFoundMessage": "Maaf, kami tidak dapat menemukan halaman itu…",
+    "backToHomeLabel": "Kembali Ke Home"
+}

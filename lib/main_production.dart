@@ -1,26 +1,20 @@
-// Copyright (c) 2021, KodingWorks
-// https://kodingworks.io
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
-
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_works/app/app.dart';
-import 'package:flutter_works/app/app_bloc_observer.dart';
+import 'package:flutter_works/app/locator.dart';
 
-void main() {
-  Bloc.observer = AppBlocObserver();
-  FlutterError.onError = (details) {
-    log(details.exceptionAsString(), stackTrace: details.stack);
-  };
+import 'app/app.dart';
+import 'app/flavor.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  F.flavor = Flavor.prod;
+
+  await setupLocator();
 
   runZonedGuarded(
-    () => runApp(const App()),
+    () => runApp(App()),
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );
 }

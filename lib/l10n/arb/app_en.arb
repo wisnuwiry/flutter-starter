@@ -3,5 +3,7 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
-    }
+    },
+    "pageNotFoundMessage": "Sorry, we couldn’t find that page…",
+    "backToHomeLabel": "Back To Home"
 }
