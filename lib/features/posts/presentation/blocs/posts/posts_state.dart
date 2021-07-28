@@ -10,7 +10,7 @@ abstract class PostsState extends Equatable {
 class PostsLoading extends PostsState {}
 
 class PostsSuccess extends PostsState {
-  PostsSuccess({
+  const PostsSuccess({
     required this.data,
     required this.page,
     required this.hasReachedMax,
@@ -37,7 +37,7 @@ class PostsSuccess extends PostsState {
 }
 
 class PostsFailure extends PostsState {
-  PostsFailure(this.failure);
+  const PostsFailure(this.failure);
 
   final Failure failure;
 

@@ -93,7 +93,7 @@ class _FailureContent extends StatelessWidget {
         ElevatedButton(
           onPressed: () {
             BlocProvider.of<PostsBloc>(context)
-                .add(FetchPostsEvent(page: 1, perPage: 40));
+                .add(const FetchPostsEvent(page: 1, perPage: 40));
           },
           child: const Text('Retry'),
         ),

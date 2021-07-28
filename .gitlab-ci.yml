@@ -1,0 +1,25 @@
+image: cirrusci/flutter
+
+stages:
+  - testing
+
+get_dependency:
+  stage: testing
+  script:
+    - flutter pub get
+
+analyze:
+  stage: testing
+  script:
+    - flutter analyze lib test
+
+format:
+  stage: testing
+  script:
+    - flutter format --set-exit-if-changed lib test
+
+unit_test:
+  stage: testing
+  script:
+    - flutter pub get
+    - flutter test --no-pub --coverage --test-randomize-ordering-seed random

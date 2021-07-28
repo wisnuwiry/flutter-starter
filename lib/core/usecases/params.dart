@@ -24,7 +24,7 @@ class PaginateParams extends Equatable {
   ///   perPage: 10,
   /// );
   /// ```
-  PaginateParams({required this.page, required this.perPage});
+  const PaginateParams({required this.page, required this.perPage});
 
   /// Page number params to send into usecase
   final int page;
@@ -39,7 +39,7 @@ class PaginateParams extends Equatable {
 /// This params for searching data with keyword property
 class SearchParams extends Equatable {
   /// field [query] must be initialize and can't nullable
-  SearchParams(this.query);
+  const SearchParams(this.query);
 
   /// Query keyword to search
   final String query;

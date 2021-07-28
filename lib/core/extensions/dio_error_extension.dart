@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_works/core/core.dart';
+
+import '../core.dart';
 
 extension DioErrorExtension on DioError {
   ServerException toServerException() {

@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_works/core/core.dart';
+
+import '../../../../core/core.dart';
 
 class GetSupportedLanguageUseCase
-    implements UseCaseFuture<Null, List<Language>, SupportedLanguageParams> {
+    implements UseCaseFuture<Failure, List<Language>, SupportedLanguageParams> {
   @override
-  FutureOr<Either<Null, List<Language>>> call(
+  FutureOr<Either<Failure, List<Language>>> call(
       SupportedLanguageParams params) async {
     final _currentSupportedLangCode = <String>[];
     final _result = <Language>[];

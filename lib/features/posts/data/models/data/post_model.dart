@@ -1,5 +1,4 @@
-import 'package:flutter_works/core/core.dart';
-
+import '../../../../../core/core.dart';
 import '../../../domain/domain.dart';
 
 class PostModel extends Post {

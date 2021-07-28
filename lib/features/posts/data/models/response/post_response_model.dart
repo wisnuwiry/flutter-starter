@@ -4,7 +4,7 @@ import '../../../../../core/core.dart';
 import '../../../posts.dart';
 
 class PostResponseModel extends Equatable {
-  PostResponseModel({required this.data, required this.meta});
+  const PostResponseModel({required this.data, required this.meta});
 
   factory PostResponseModel.fromJson(Map<String, dynamic> json) {
     return PostResponseModel(

@@ -1,10 +1,9 @@
-import 'package:flutter_works/app/config.dart';
-import 'package:flutter_works/core/core.dart';
-
+import '../../../../../app/config.dart';
+import '../../../../../core/core.dart';
 import '../../../settings.dart';
 
 class SettingsModel extends Settings {
-  SettingsModel({required AppTheme? theme, required Language? language})
+  const SettingsModel({required AppTheme? theme, required Language? language})
       : super(theme: theme, language: language);
 
   factory SettingsModel.fromJson(Map<String, dynamic> json) {

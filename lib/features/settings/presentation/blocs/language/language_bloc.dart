@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_works/core/core.dart';
-import 'package:flutter_works/features/settings/domain/domain.dart';
-import 'package:flutter_works/l10n/l10n.dart';
+
+import '../../../../../core/core.dart';
+import '../../../../../l10n/l10n.dart';
+import '../../../domain/domain.dart';
 
 part 'language_event.dart';
 part 'language_state.dart';

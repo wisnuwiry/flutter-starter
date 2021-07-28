@@ -24,20 +24,20 @@ class AppBarSection extends AppBar {
       onTap: (index) {
         switch (index) {
           case 1:
-            context.router.pushPath('/example-not-found-route');
+            context.router.pushNamed('/example-not-found-route');
             break;
           case 2:
-            context.router.pushPath('/settings');
+            context.router.pushNamed('/settings');
             // Push with Route Class
             // context.router.push(const SettingsRoute());
             break;
           default:
         }
       },
-      tabs: [
-        const Tab(text: 'Posts', icon: Icon(Icons.article)),
-        const Tab(text: 'Not Found Page', icon: Icon(Icons.bug_report)),
-        const Tab(text: 'Settings Page', icon: Icon(Icons.settings)),
+      tabs: const [
+        Tab(text: 'Posts', icon: Icon(Icons.article)),
+        Tab(text: 'Not Found Page', icon: Icon(Icons.bug_report)),
+        Tab(text: 'Settings Page', icon: Icon(Icons.settings)),
       ],
     );
   }

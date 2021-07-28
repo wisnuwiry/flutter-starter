@@ -10,7 +10,7 @@ abstract class LanguageEvent extends Equatable {
 class InitializeLanguageEvent extends LanguageEvent {}
 
 class ChangeLanguageEvent extends LanguageEvent {
-  ChangeLanguageEvent(this.language);
+  const ChangeLanguageEvent(this.language);
 
   final Language language;
 

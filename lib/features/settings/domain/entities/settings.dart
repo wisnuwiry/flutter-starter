@@ -1,8 +1,9 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_works/core/core.dart';
+
+import '../../../../core/core.dart';
 
 class Settings extends Equatable {
-  Settings({
+  const Settings({
     required this.language,
     required this.theme,
   });

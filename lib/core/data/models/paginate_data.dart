@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class PaginateData extends Equatable {
-  PaginateData({
+  const PaginateData({
     required this.hasMore,
     required this.quotaMax,
     required this.quotaRemaining,

@@ -162,6 +162,35 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 }
 ```
 
+
+## Working with Route Navigation 🧭
+
+### Now run the generator
+
+```bash
+flutter packages pub run build_runner watch
+```
+
+We use the watch flag to watch for file changes which will rebuild the generated files when necessary. If you would like to only generate files once and exit after use:
+
+```bash
+flutter packages pub run build_runner build
+```
+
+When generating route encountered this error:
+
+```
+[SEVERE] Conflicting outputs were detected and the build is unable to prompt for permission to remove them. These outputs must be removed manually or the build can be run with `--delete-conflicting-outputs`. The outputs are: lib/app/routes.gr.dart
+```
+
+You must add `--delete-conflicting-outputs` when generating, Ex:
+
+```bash
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+
+> More info: https://autoroute.vercel.app/
+
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
 [internationalization_link]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg

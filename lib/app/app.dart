@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_works/features/settings/settings.dart';
 import 'package:get_it/get_it.dart';
 
+import '../features/settings/settings.dart';
 import '../l10n/l10n.dart';
 import 'config.dart';
 import 'routes.gr.dart';
@@ -51,7 +51,7 @@ class _AppWidget extends StatelessWidget {
             return MaterialApp.router(
               title: AppConfig.titleSiteWeb,
               theme: themeState.theme,
-              localizationsDelegates: [
+              localizationsDelegates: const [
                 AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,
               ],

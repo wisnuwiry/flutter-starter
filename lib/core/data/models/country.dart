@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Country extends Equatable {
-  Country({
+  const Country({
     required this.dialCode,
     required this.code,
     required this.flag,

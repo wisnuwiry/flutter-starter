@@ -8,7 +8,7 @@ abstract class PostsEvent extends Equatable {
 }
 
 class FetchPostsEvent extends PostsEvent {
-  FetchPostsEvent({required this.page, required this.perPage});
+  const FetchPostsEvent({required this.page, required this.perPage});
 
   final int page;
   final int perPage;

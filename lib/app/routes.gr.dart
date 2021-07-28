@@ -5,24 +5,32 @@
 // **************************************************************************
 
 import 'package:auto_route/auto_route.dart' as _i1;
-import 'package:flutter_works/core/core.dart' as _i4;
-import 'package:flutter_works/features/posts/posts.dart' as _i2;
-import 'package:flutter_works/features/settings/settings.dart' as _i3;
+import 'package:flutter/material.dart' as _i2;
+import 'package:flutter_works/core/core.dart' as _i5;
+import 'package:flutter_works/features/posts/posts.dart' as _i3;
+import 'package:flutter_works/features/settings/settings.dart' as _i4;
 
 class AppRouter extends _i1.RootStackRouter {
-  AppRouter();
+  AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
+      : super(navigatorKey);
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    PostsRoute.name: (entry) {
-      return _i1.AdaptivePage(entry: entry, child: const _i2.PostsPage());
-    },
-    SettingsRoute.name: (entry) {
-      return _i1.AdaptivePage(entry: entry, child: const _i3.SettingsPage());
-    },
-    NotFoundRoute.name: (entry) {
-      return _i1.AdaptivePage(entry: entry, child: const _i4.NotFoundPage());
-    }
+    PostsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i3.PostsPage();
+        }),
+    SettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i4.SettingsPage();
+        }),
+    NotFoundRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i5.NotFoundPage();
+        })
   };
 
   @override

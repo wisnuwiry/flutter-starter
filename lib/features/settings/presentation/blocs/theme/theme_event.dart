@@ -10,7 +10,7 @@ abstract class ThemeEvent extends Equatable {
 class InitializeThemeEvent extends ThemeEvent {}
 
 class ChangeThemeEvent extends ThemeEvent {
-  ChangeThemeEvent(this.theme);
+  const ChangeThemeEvent(this.theme);
 
   final AppTheme theme;
 

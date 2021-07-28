@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:flutter_works/app/config.dart';
-import 'package:flutter_works/core/core.dart';
 import 'package:hive/hive.dart';
 
+import '../../../../app/config.dart';
+import '../../../../core/core.dart';
 import '../data.dart';
 
 abstract class SettingsLocalDataSource

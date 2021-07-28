@@ -35,7 +35,7 @@ class PostRepositoryImpl implements PostRepository {
           final result = await localDataSource.getData();
           return Right(PaginationData(
             data: result,
-            meta: PaginateData(
+            meta: const PaginateData(
               hasMore: false,
               quotaMax: 0,
               quotaRemaining: 0,
