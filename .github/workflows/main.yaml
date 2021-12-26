@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1.4.0
+      - uses: subosito/flutter-action@v1.5.3
 
       - name: Install Dependencies
         run: flutter packages get
@@ -23,7 +23,11 @@ jobs:
         run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
 
       - name: Check Code Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+        with:
+          path: "./coverage/lcov.info"
+          min_coverage: 85
+          exclude: "**/*_observer.dart **/change.dart **/*g.dart **/*gr.dart **/*.freezed.dart"
       
       - name: Upload Report Codecov
         uses: codecov/codecov-action@v1
