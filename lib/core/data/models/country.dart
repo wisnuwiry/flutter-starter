@@ -1,5 +1,10 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'country.g.dart';
+
+@JsonSerializable()
 class Country extends Equatable {
   const Country({
     required this.dialCode,
@@ -8,28 +13,22 @@ class Country extends Equatable {
     required this.name,
   });
 
-  factory Country.fromJson(Map<String, dynamic> map) {
-    return Country(
-      dialCode: map['dial_code'],
-      code: map['code'],
-      flag: map['flag'],
-      name: map['name'],
-    );
-  }
+  factory Country.fromJson(Map<String, dynamic> json) =>
+      _$CountryFromJson(json);
 
+  @JsonKey(name: 'dial_code', fromJson: StringParser.parse)
   final String dialCode;
+
+  @JsonKey(fromJson: StringParser.parse)
   final String code;
+
+  @JsonKey(fromJson: StringParser.parse)
   final String flag;
+
+  @JsonKey(fromJson: StringParser.parse)
   final String name;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'dial_code': dialCode,
-      'code': code,
-      'flag': flag,
-      'name': name,
-    };
-  }
+  Map<String, dynamic> toJson() => _$CountryToJson(this);
 
   Country copyWith({
     String? dialCode,

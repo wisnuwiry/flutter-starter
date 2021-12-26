@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Dimens {
-  static double width(BuildContext context) => context.size?.width ?? 0;
-  static double height(BuildContext context) => context.size?.height ?? 0;
+  static double width(BuildContext context) =>
+      MediaQuery.of(context).size.width;
+  static double height(BuildContext context) =>
+      MediaQuery.of(context).size.height;
 
   static const double dp2 = 2;
   static const double dp4 = 4;

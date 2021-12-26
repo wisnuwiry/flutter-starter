@@ -13,6 +13,9 @@ class GeneralServerException extends ServerException {
           message: message,
           code: code,
         );
+
+  @override
+  String toString() => 'GeneralServerException(message: $message, code: $code)';
 }
 
 class TimeOutServerException extends ServerException {
@@ -23,6 +26,9 @@ class TimeOutServerException extends ServerException {
           message: message,
           code: code,
         );
+
+  @override
+  String toString() => 'TimeOutServerException(message: $message, code: $code)';
 }
 
 class NotFoundServerException extends ServerException {
@@ -33,6 +39,10 @@ class NotFoundServerException extends ServerException {
           message: message,
           code: code,
         );
+
+  @override
+  String toString() =>
+      'NotFoundServerException(message: $message, code: $code)';
 }
 
 class UnAuthenticationServerException extends ServerException {
@@ -43,6 +53,10 @@ class UnAuthenticationServerException extends ServerException {
           message: message,
           code: code,
         );
+
+  @override
+  String toString() =>
+      'UnAuthenticationServerException(message: $message, code: $code)';
 }
 
 class UnAuthorizeServerException extends ServerException {
@@ -53,6 +67,10 @@ class UnAuthorizeServerException extends ServerException {
           message: message,
           code: code,
         );
+
+  @override
+  String toString() =>
+      'UnAuthorizeServerException(message: $message, code: $code)';
 }
 
 class InternalServerException extends ServerException {
@@ -63,4 +81,8 @@ class InternalServerException extends ServerException {
           message: message,
           code: code,
         );
+
+  @override
+  String toString() =>
+      'InternalServerException(message: $message, code: $code)';
 }

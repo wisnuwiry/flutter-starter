@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutterWorks">
+    package="space.wisnuwiry.flutter_starter">
    <application
-        android:label="Flutter Works"
+        android:label="Flutter Starter"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

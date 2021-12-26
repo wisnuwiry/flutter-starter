@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
-
-import '../../../../core/core.dart';
-import '../../settings.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/features/settings/settings.dart';
 
 abstract class SettingsRepository {
   Future<Either<Failure, Settings>> getSettings();

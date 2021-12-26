@@ -5,5 +5,9 @@
         "description": "Teks ditampilkan di AppBar dari Halaman Penghitung"
     },
     "pageNotFoundMessage": "Maaf, kami tidak dapat menemukan halaman itu…",
-    "backToHomeLabel": "Kembali Ke Home"
+    "backToHomeLabel": "Kembali Ke Home",
+    "settings": "Pengaturan",
+    "language": "Bahasa",
+    "theme": "Tema",
+    "home": "Home"
 }

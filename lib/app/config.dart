@@ -1,4 +1,5 @@
-import '../core/core.dart';
+import 'package:flutter_starter/app/flavor.dart';
+import 'package:flutter_starter/core/core.dart';
 
 /// Base Config in App
 class AppConfig {
@@ -11,17 +12,20 @@ class AppConfig {
   /// This config set `title` in `MaterialApp`
   /// And by default title in `MaterialApp` change
   /// title in Tab Browser on your web apps
-  static const String titleSiteWeb = 'Flutter Works';
+  static const String titleSiteWeb = 'Farm Project';
 
   /// Base URL API Apps
-  /// Base URL in Production Mode
-  static const String baseURL = 'https://api.stackexchange.com/2.2';
 
-  /// Base URL in Development Mode
-  static const String baseURLDev = 'https://api.stackexchange.com/2.2';
+  static const FlavorConfig<String> baseUrl = FlavorConfig<String>(
+    /// Base URL in Production Mode
+    prod: 'https://api.stackexchange.com/2.2',
 
-  /// Base URL in Staging Mode
-  static const String baseURLStg = 'https://api.stackexchange.com/2.2';
+    /// Base URL in Development Mode
+    dev: 'https://api.stackexchange.com/2.2',
+
+    /// Base URL in Staging Mode
+    staging: 'https://api.stackexchange.com/2.2',
+  );
 
   // ---------------------------------------------------------------------------
   //                              END CORE CONFIG                             \\
@@ -49,4 +53,36 @@ class AppConfig {
   ///
   /// When use `AppBar` background `statusbar` is background `AppBar`
   static const bool transparentStatusBar = true;
+}
+
+/// Config multiple flavors
+class FlavorConfig<T> {
+  const FlavorConfig({
+    required this.dev,
+    required this.prod,
+    required this.staging,
+    this.fallback,
+  }) : assert(
+          // ignore: avoid_bool_literals_in_conditional_expressions
+          dev == null || prod == null || staging == null
+              ? fallback != null
+              : true,
+          '[fallback]cannot be null if there is one flavor whose value is null',
+        );
+
+  final T? dev;
+  final T? prod;
+  final T? staging;
+  final T? fallback;
+
+  T get value {
+    switch (F.flavor) {
+      case Flavor.dev:
+        return dev ?? fallback!;
+      case Flavor.staging:
+        return staging ?? fallback!;
+      case Flavor.prod:
+        return prod ?? fallback!;
+    }
+  }
 }

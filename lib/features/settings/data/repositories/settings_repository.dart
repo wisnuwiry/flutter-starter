@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
-
-import '../../../../core/core.dart';
-import '../../settings.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/features/settings/settings.dart';
 
 class SettingsRepositoryImpl implements SettingsRepository {
   SettingsRepositoryImpl({required this.localDataSource});
@@ -52,7 +51,7 @@ class SettingsRepositoryImpl implements SettingsRepository {
   @override
   Future<Either<Failure, bool>> saveSettings(Settings setting) async {
     try {
-      final result = await localDataSource.saveCache(setting.toModel());
+      final result = await localDataSource.saveCache(setting);
 
       return Right(result);
     } on CacheException catch (e) {

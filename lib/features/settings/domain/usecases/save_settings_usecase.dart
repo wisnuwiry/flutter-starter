@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-
-import '../../../../core/core.dart';
-import '../domain.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/features/settings/settings.dart';
 
 class SaveSettingsUseCase implements UseCaseFuture<Failure, bool, Settings> {
   SaveSettingsUseCase(this.repository);

@@ -15,6 +15,7 @@ import 'package:dartz/dartz.dart';
 /// as Params.
 ///
 abstract class UseCaseFuture<Failure, Type, Params> {
+  /// Method to calling this useCase
   FutureOr<Either<Failure, Type>> call(Params params);
 }
 
@@ -32,5 +33,6 @@ abstract class UseCaseFuture<Failure, Type, Params> {
 /// as Params.
 ///
 abstract class UseCaseStream<Failure, Type, Params> {
+  /// Method to calling this useCase
   Stream<Either<Failure, Type>> call(Params params);
 }

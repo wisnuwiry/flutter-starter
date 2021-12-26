@@ -8,4 +8,7 @@ class ErrorCodeException implements Exception {
 
   final String message;
   final Object? code;
+
+  @override
+  String toString() => 'ErrorCodeException(message: $message, code: $code)';
 }

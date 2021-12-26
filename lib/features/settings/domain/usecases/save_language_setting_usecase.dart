@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-
-import '../../../../core/core.dart';
-import '../domain.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/features/settings/domain/domain.dart';
 
 class SaveLanguageSettingUseCase
     implements UseCaseFuture<Failure, bool, Language> {

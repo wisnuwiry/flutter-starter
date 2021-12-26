@@ -1,4 +1,4 @@
-const List<Map<String, dynamic>> countriesRawData = [
+const List<Map<String, dynamic>> languagesRawData = <Map<String, String>>[
   {
     'code': 'id',
     'name': 'Indonesia',

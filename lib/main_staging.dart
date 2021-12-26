@@ -2,10 +2,9 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
-
-import 'app/app.dart';
-import 'app/flavor.dart';
-import 'app/locator.dart';
+import 'package:flutter_starter/app/flavor.dart';
+import 'package:flutter_starter/app/locator.dart';
+import 'package:flutter_starter/app/runner.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +13,11 @@ Future<void> main() async {
   await setupLocator();
 
   runZonedGuarded(
-    () => runApp(App()),
-    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
+    runnerApp,
+    (error, stackTrace) => log(
+      error.toString(),
+      name: 'ERROR',
+      stackTrace: stackTrace,
+    ),
   );
 }

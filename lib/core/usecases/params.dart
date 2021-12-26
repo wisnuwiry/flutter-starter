@@ -4,7 +4,9 @@ import 'package:equatable/equatable.dart';
 ///
 /// If you want to put `Params` in `UseCase` and in usecase no need param
 /// You should use this Params
-class NoParams {}
+class NoParams {
+  const NoParams();
+}
 
 /// Params for getting data with **Paginating**
 ///
@@ -52,30 +54,24 @@ class SearchParams extends Equatable {
 ///
 /// Param you can put [query] properties for search and
 /// [page] & [perPage] for paginate handle
-class SearchPaginateParams implements PaginateParams, SearchParams {
+class SearchPaginateParams extends Equatable {
   /// All field must be initialize and can't null
   ///
   /// Params [query] for search with keyword
   ///
   /// Params [page] & [perPage] for handling paginate data
-  SearchPaginateParams({
+  const SearchPaginateParams({
     required this.query,
     required this.page,
     required this.perPage,
   });
 
-  @override
   final String query;
 
-  @override
   final int page;
 
-  @override
   final int perPage;
 
   @override
   List<Object?> get props => [query, page, perPage];
-
-  @override
-  bool? get stringify => false;
 }

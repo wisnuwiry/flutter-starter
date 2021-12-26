@@ -1,11 +1,9 @@
-# Flutter Works
+# Flutter Starter
 
-[![KodingWorks][logo]][kodingworks_link]
-
-Developed with 💙 by [KodingWorks][kodingworks_link] 🦄
+[![Wisnuwiry][logo]][website_link]
 
 [![Language][dart_language_badge]](http://dart.dev)
-[![Flutter Works][github_action_badge]][github_action_workflow_link]
+[![Flutter Starter][github_action_badge]][github_action_workflow_link]
 [![Codecov][codecov_badge]][codecov_link]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
@@ -14,7 +12,7 @@ Developed with 💙 by [KodingWorks][kodingworks_link] 🦄
 [![Stars][issues_badge]][repo_link]
 [![Stars][pull_request_badge]][repo_link]
 
-A FlutterWorks Flutter Starter Project created by the [KodingWorks Team][kodingworks_link].
+A Flutter Starter Project created by the [Wisnu G. Saputra][website_link].
 
 ---
 
@@ -39,7 +37,7 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 $ flutter run --flavor production --target lib/main_production.dart
 ```
 
-_\*Flutter Works works on iOS, Android, and Web._
+_\*Flutter Starter works on iOS, Android, and Web._
 
 ---
 
@@ -100,7 +98,7 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 3. Use the new string
 
 ```dart
-import 'package:flutter_works/l10n/l10n.dart';
+import 'package:flutter_starter/l10n/l10n.dart';
 
 @override
 Widget build(BuildContext context) {
@@ -195,11 +193,11 @@ flutter packages pub run build_runner build --delete-conflicting-outputs
 [internationalization_link]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT
-[logo]: https://avatars.githubusercontent.com/u/57176505?s=200&v=4
+[logo]: https://avatars.githubusercontent.com/u/44025097?s=200&v=4
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
-[kodingworks_link]: https://kodingworks.io
+[website_link]: https://wisnuwiry.space
 [codecov_badge]: https://codecov.io/gh/wisnuwiry/flutter-starter/branch/main/graph/badge.svg
 [codecov_link]: https://codecov.io/gh/wisnuwiry/flutter-starter
 [repo_link]: https://github.com/wisnuwiry/flutter-starter

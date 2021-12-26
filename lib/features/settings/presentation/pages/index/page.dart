@@ -1,10 +1,8 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../core/core.dart';
-import '../../../../../l10n/l10n.dart';
-import '../../../settings.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/features/settings/settings.dart';
+import 'package:flutter_starter/l10n/l10n.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -18,7 +16,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(context.l10n.settings),
       ),
       body: ListView(
         children: [
@@ -36,8 +34,9 @@ class _ThemeSection extends StatelessWidget {
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, state) {
         return ListTile(
+          key: const Key('list_tile_settings_select_theme'),
           leading: const Icon(Icons.style),
-          title: const Text('Theme'),
+          title: Text(context.l10n.theme),
           onTap: () => _showDialogSelectTheme(context, AppTheme.values),
         );
       },
@@ -45,17 +44,16 @@ class _ThemeSection extends StatelessWidget {
   }
 
   void _showDialogSelectTheme(BuildContext context, List<AppTheme> themes) {
-    showDialog(
+    showDialog<Object?>(
       context: context,
       builder: (_) => SimpleDialog(
         children: themes
             .map(
               (theme) => ListTile(
-                title: Text(theme.toText().toUpperCase()),
+                title: Text(theme.toText()),
                 onTap: () {
-                  BlocProvider.of<ThemeBloc>(context)
-                      .add(ChangeThemeEvent(theme));
-                  context.router.pop();
+                  BlocProvider.of<ThemeBloc>(context).add(ThemeChanged(theme));
+                  Navigator.of(context).pop();
                 },
               ),
             )
@@ -71,8 +69,9 @@ class _LanguageSection extends StatelessWidget {
     return BlocBuilder<LanguageBloc, LanguageState>(
       builder: (context, state) {
         return ListTile(
+          key: const Key('list_tile_settings_select_language'),
           leading: const Icon(Icons.language),
-          title: const Text('Language'),
+          title: Text(context.l10n.language),
           trailing: Text(state.language?.code ?? context.l10n.localeName),
           onTap: () =>
               _showDialogSelectLanguage(context, state.supportedLanguages),
@@ -82,8 +81,10 @@ class _LanguageSection extends StatelessWidget {
   }
 
   void _showDialogSelectLanguage(
-      BuildContext context, List<Language> languages) {
-    showDialog(
+    BuildContext context,
+    List<Language> languages,
+  ) {
+    showDialog<Object?>(
       context: context,
       builder: (_) => SimpleDialog(
         children: languages
@@ -93,8 +94,8 @@ class _LanguageSection extends StatelessWidget {
                 trailing: Text(lang.code),
                 onTap: () {
                   BlocProvider.of<LanguageBloc>(context)
-                      .add(ChangeLanguageEvent(lang));
-                  context.router.pop();
+                      .add(LanguageChanged(lang));
+                  Navigator.of(context).pop();
                 },
               ),
             )

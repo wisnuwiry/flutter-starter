@@ -9,7 +9,7 @@ class NumParser {
   /// - [intParse] from [int] return [int]
   /// - [intParse] from [double] return [int]
   /// - [intParse] from [String] return [int] when String value is valid, and
-  /// return `null` or [defaultValue] when `invalid`
+  /// return `null` or [fallbackValue] when `invalid`
   ///
   /// Example to use:
   ///
@@ -20,18 +20,24 @@ class NumParser {
   /// NumParser.intParse(null) // return null
   /// NumParser.intParse('sd12', 100) // return 100 (as int)
   /// ```
-  static int? intParse(dynamic value, [int? defaultValue]) {
+  static int intParse(dynamic value, {int fallbackValue = 0}) {
+    return tryIntParse(value) ?? fallbackValue;
+  }
+
+  /// Parse [value] as a, possibly signed, integer literal.
+  ///
+  /// Like [intParse] except that this function returns `null` where a
+  /// similar call to [intParse] for invalid input [value].
+  static int? tryIntParse(dynamic value) {
     try {
-      if (value is int) {
-        return value;
-      } else if (value is double) {
+      if (value is num) {
         return value.toInt();
       } else if (value is String) {
-        return int.tryParse(value) ?? defaultValue;
+        return int.tryParse(value);
       }
-      return defaultValue;
+      return null;
     } catch (e) {
-      return defaultValue;
+      return null;
     }
   }
 
@@ -42,7 +48,7 @@ class NumParser {
   /// - [doubleParse] from [double] return [double]
   /// - [doubleParse] from [double] return [double]
   /// - [doubleParse] from [String] return [double] when String value is valid,
-  /// and return `null` or [defaultValue] when `invalid`
+  /// and return `null` or [fallbackValue] when `invalid`
   ///
   /// Example to use:
   ///
@@ -53,18 +59,24 @@ class NumParser {
   /// NumParser.doubleParse(null) // return null
   /// NumParser.doubleParse('sd12', 100) // return 100 (as double)
   /// ```
-  static double? doubleParse(dynamic value, [double? defaultValue]) {
+  static double? doubleParse(dynamic value, {double fallbackValue = 0}) {
+    return tryDoubleParse(value) ?? fallbackValue;
+  }
+
+  /// Parse [value] as a, possibly signed, double literal.
+  ///
+  /// Like [doubleParse] except that this function returns `null` where a
+  /// similar call to [doubleParse] for invalid input [value].
+  static double? tryDoubleParse(dynamic value) {
     try {
-      if (value is double) {
-        return value;
-      } else if (value is int) {
+      if (value is num) {
         return value.toDouble();
       } else if (value is String) {
-        return double.tryParse(value) ?? defaultValue;
+        return double.tryParse(value);
       }
-      return defaultValue;
+      return null;
     } catch (e) {
-      return defaultValue;
+      return null;
     }
   }
 }

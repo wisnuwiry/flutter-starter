@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-
-import '../core/core.dart';
-import '../features/posts/posts.dart';
-import '../features/settings/settings.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/features/home/home.dart';
+import 'package:flutter_starter/features/settings/settings.dart';
 
 // @CupertinoAutoRouter
 // @MaterialAutoRouter
@@ -10,9 +10,9 @@ import '../features/settings/settings.dart';
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: PostsPage, initial: true),
-    AutoRoute(page: SettingsPage, path: '/settings'),
-    AutoRoute(path: '*', page: NotFoundPage),
+    AutoRoute<Widget>(page: SettingsPage, path: '/settings'),
+    AutoRoute<Widget>(page: MainPage, path: '/', initial: true),
+    AutoRoute<Widget>(path: '*', page: NotFoundPage),
   ],
 )
 class $AppRouter {}

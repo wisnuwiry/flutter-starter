@@ -1,4 +1,4 @@
-import '../core.dart';
+import 'package:flutter_starter/core/core.dart';
 
 class CacheFailure extends Failure {
   const CacheFailure({required String message, Object? code})

@@ -1,8 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
-import '../../l10n/l10n.dart';
-import '../core.dart';
+import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/l10n/l10n.dart';
 
 class NotFoundPage extends StatefulWidget {
   const NotFoundPage({Key? key}) : super(key: key);
@@ -21,7 +20,6 @@ class _NotFoundPageState extends State<NotFoundPage> {
           horizontal: Dimens.dp16,
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               '404',
@@ -38,6 +36,7 @@ class _NotFoundPageState extends State<NotFoundPage> {
             ),
             const SizedBox(height: Dimens.dp20),
             ElevatedButton(
+              key: const Key('back_to_home_button_not_found'),
               onPressed: () {
                 context.router.popUntilRoot();
               },

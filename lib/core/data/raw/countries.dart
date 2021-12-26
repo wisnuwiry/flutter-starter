@@ -1,4 +1,4 @@
-const List<Map<String, dynamic>> countriesRawData = [
+const List<Map<String, dynamic>> countriesRawData = <Map<String, Object>>[
   {'code': 'ID', 'name': 'Indonesia', 'dial_code': '+62'},
   {'code': 'VN', 'name': 'Vietnam', 'dial_code': '+84'},
   {'code': 'TH', 'name': 'Thailand', 'dial_code': '+66'},
@@ -66,7 +66,7 @@ const List<Map<String, dynamic>> countriesRawData = [
   },
   {'code': 'CK', 'name': 'Cook Islands', 'dial_code': '+682'},
   {'code': 'CR', 'name': 'Costa Rica', 'dial_code': '+506'},
-  {'code': 'CI', 'name': 'Côte d\'Ivoire', 'dial_code': '+225'},
+  {'code': 'CI', 'name': "Côte d'Ivoire", 'dial_code': '+225'},
   {'code': 'HR', 'name': 'Croatia', 'dial_code': '+385'},
   {'code': 'CU', 'name': 'Cuba', 'dial_code': '+53'},
   {'code': 'CY', 'name': 'Cyprus', 'dial_code': '+357'},
@@ -128,7 +128,7 @@ const List<Map<String, dynamic>> countriesRawData = [
   {'code': 'KI', 'name': 'Kiribati', 'dial_code': '+686'},
   {
     'code': 'KP',
-    'name': 'Korea (Democratic People\'s Republic of)',
+    'name': "Korea (Democratic People's Republic of)",
     'dial_code': '+850'
   },
   {'code': 'KR', 'name': 'Korea (Republic of)', 'dial_code': '+82'},
@@ -136,7 +136,7 @@ const List<Map<String, dynamic>> countriesRawData = [
   {'code': 'KG', 'name': 'Kyrgyzstan', 'dial_code': '+996'},
   {
     'code': 'LA',
-    'name': 'Lao People\'s Democratic Republic',
+    'name': "Lao People's Democratic Republic",
     'dial_code': '+856'
   },
   {'code': 'LV', 'name': 'Latvia', 'dial_code': '+371'},

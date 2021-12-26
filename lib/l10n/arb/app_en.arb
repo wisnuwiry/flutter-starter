@@ -5,5 +5,9 @@
         "description": "Text shown in the AppBar of the Counter Page"
     },
     "pageNotFoundMessage": "Sorry, we couldn’t find that page…",
-    "backToHomeLabel": "Back To Home"
+    "backToHomeLabel": "Back To Home",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "home": "Home"
 }
