@@ -38,6 +38,10 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "space.wisnuwiry.flutter_starter"
@@ -82,12 +86,12 @@ android {
     }
 
     buildTypes {
-        release {
-            signingConfig signingConfigs.release
-            minifyEnabled true
-            useProguard true
-            proguardFiles getDefaultProguardFile('proguard-android.txt')
-        }
+        // release {
+        //     signingConfig signingConfigs.release
+        //     minifyEnabled true
+        //     useProguard true
+        //     proguardFiles getDefaultProguardFile('proguard-android.txt')
+        // }
         debug {
             signingConfig signingConfigs.debug
         }
