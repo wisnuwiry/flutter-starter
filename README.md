@@ -41,6 +41,26 @@ _\*Flutter Starter works on iOS, Android, and Web._
 
 ---
 
+## Build App
+
+To build APK desired flavor use the following commands:
+
+```sh
+# Development
+$ flutter build apk --flavor development --target lib/main_development.dart
+
+# Staging
+$ flutter build apk --flavor staging --target lib/main_staging.dart
+
+# Production
+$ flutter build apk --flavor production --target lib/main_production.dart
+
+```
+
+And for builds for release, see the documentation according to the [Android](https://docs.flutter.dev/deployment/android) and [iOS](https://docs.flutter.dev/deployment/ios) platforms.
+
+---
+
 ## Running Tests 🧪
 
 To run all unit and widget tests use the following command:
