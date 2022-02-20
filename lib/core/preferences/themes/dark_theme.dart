@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_starter/core/core.dart';
 
-class DarkTheme {
+class DarkTheme extends BaseTheme {
   DarkTheme(this.primaryColor);
 
   final Color primaryColor;
   static const Color dividerColor = Color(0xFF36393e);
 
+  @override
+  ColorScheme get scheme => ColorScheme.dark(primary: primaryColor);
+
+  @override
   AppBarTheme get appBar => AppBarTheme(
         elevation: 0,
         color: primaryColor,
@@ -16,6 +20,7 @@ class DarkTheme {
         ),
       );
 
+  @override
   ButtonThemeData get button => ButtonThemeData(
         buttonColor: primaryColor,
         padding: const EdgeInsets.symmetric(
@@ -27,6 +32,10 @@ class DarkTheme {
         ),
       );
 
+  @override
+  CardTheme get card => const CardTheme(color: Colors.black);
+
+  @override
   ElevatedButtonThemeData get elevatedButton => ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -43,6 +52,14 @@ class DarkTheme {
         ),
       );
 
+  @override
+  OutlinedButtonThemeData get outlinedButton => OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          primary: primaryColor,
+        ),
+      );
+
+  @override
   InputDecorationTheme get inputDecoration {
     final baseBorder = OutlineInputBorder(
       borderSide: const BorderSide(color: dividerColor),
@@ -67,7 +84,8 @@ class DarkTheme {
     );
   }
 
-  ThemeData get toTheme {
+  @override
+  ThemeData get data {
     return ThemeData.dark().copyWith(
       primaryColor: primaryColor,
       appBarTheme: appBar,
@@ -75,9 +93,7 @@ class DarkTheme {
       elevatedButtonTheme: elevatedButton,
       inputDecorationTheme: inputDecoration,
       dividerColor: dividerColor,
-      colorScheme: ThemeData.dark().colorScheme.copyWith(
-            primary: primaryColor,
-          ),
+      colorScheme: scheme,
     );
   }
 }

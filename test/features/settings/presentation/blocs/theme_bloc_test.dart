@@ -4,6 +4,7 @@ import 'package:flutter_starter/app/config.dart';
 import 'package:flutter_starter/core/core.dart';
 import 'package:flutter_starter/features/settings/settings.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockGetThemeSettingUseCase extends Mock
@@ -50,7 +51,7 @@ void main() {
 
   void _mockCrashSaveTheme() {
     when(() => mockSaveThemeSetting.call(tTheme))
-        .thenThrow(const FormatException());
+        .thenThrow(const CacheException(message: ''));
   }
 
   group('features/settings/presentation/blocs/theme/', () {
@@ -161,7 +162,13 @@ void main() {
       );
 
       blocTest<ThemeBloc, ThemeState>(
-        'Should record error when have any exception',
+        'Should emit [] when have any exception',
+        setUp: () {
+          GetIt.I.registerLazySingleton(RecordErrorUseCase.new);
+        },
+        tearDown: () {
+          GetIt.I.reset();
+        },
         build: () {
           _mockCrashSaveTheme();
 

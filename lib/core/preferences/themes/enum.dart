@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_starter/core/core.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -16,12 +15,12 @@ extension AppThemeX on AppTheme {
     return describeEnum(this);
   }
 
-  ThemeData toThemeData() {
+  BaseTheme toTheme() {
     switch (this) {
       case AppTheme.dark:
-        return DarkTheme(AppColors.primaryColor).toTheme;
+        return DarkTheme(AppColors.primaryColor);
       case AppTheme.light:
-        return LightTheme(AppColors.primaryColor).toTheme;
+        return LightTheme(AppColors.primaryColor);
     }
   }
 }

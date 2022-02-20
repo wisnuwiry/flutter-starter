@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_starter/core/core.dart';
 
-class LightTheme {
+class LightTheme extends BaseTheme {
   LightTheme(this.primaryColor);
 
   final Color primaryColor;
   static const Color dividerColor = Color(0xFFF5F5F5);
 
+  @override
+  ColorScheme get scheme => ColorScheme.light(
+        primary: primaryColor,
+      );
+
+  @override
   AppBarTheme get appBar => AppBarTheme(
         elevation: 0,
         color: primaryColor,
@@ -16,6 +22,7 @@ class LightTheme {
         ),
       );
 
+  @override
   ButtonThemeData get button => ButtonThemeData(
         buttonColor: primaryColor,
         padding: const EdgeInsets.symmetric(
@@ -27,6 +34,7 @@ class LightTheme {
         ),
       );
 
+  @override
   ElevatedButtonThemeData get elevatedButton => ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -43,6 +51,14 @@ class LightTheme {
         ),
       );
 
+  @override
+  OutlinedButtonThemeData get outlinedButton => OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          primary: primaryColor,
+        ),
+      );
+
+  @override
   InputDecorationTheme get inputDecoration {
     final baseBorder = OutlineInputBorder(
       borderSide: const BorderSide(color: dividerColor),
@@ -68,17 +84,21 @@ class LightTheme {
     );
   }
 
-  ThemeData get toTheme {
+  @override
+  CardTheme get card => const CardTheme();
+
+  @override
+  ThemeData get data {
     return ThemeData.light().copyWith(
       primaryColor: primaryColor,
       appBarTheme: appBar,
       buttonTheme: button,
       elevatedButtonTheme: elevatedButton,
+      outlinedButtonTheme: outlinedButton,
       inputDecorationTheme: inputDecoration,
       dividerColor: dividerColor,
-      colorScheme: ThemeData.light().colorScheme.copyWith(
-            primary: primaryColor,
-          ),
+      cardTheme: card,
+      colorScheme: scheme,
     );
   }
 }

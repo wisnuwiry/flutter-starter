@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Dimens {
+  const Dimens._();
+
   static double width(BuildContext context) =>
       MediaQuery.of(context).size.width;
   static double height(BuildContext context) =>

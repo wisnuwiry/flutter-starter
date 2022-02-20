@@ -4,6 +4,7 @@ import 'package:flutter_starter/core/core.dart';
 import 'package:flutter_starter/features/settings/settings.dart';
 import 'package:flutter_starter/l10n/l10n.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../utils/utils.dart';
@@ -216,7 +217,13 @@ void main() {
       );
 
       blocTest<LanguageBloc, LanguageState>(
-        'Should record error when have any exception',
+        'Should emit [] when have any exception',
+        setUp: () {
+          GetIt.I.registerLazySingleton(RecordErrorUseCase.new);
+        },
+        tearDown: () {
+          GetIt.I.reset();
+        },
         build: () {
           _mockCrashSaveLanguage();
 

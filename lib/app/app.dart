@@ -1,17 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_starter/app/config.dart';
-import 'package:flutter_starter/app/routes.gr.dart';
+import 'package:flutter_starter/app/routes.dart';
 import 'package:flutter_starter/core/core.dart';
 import 'package:flutter_starter/features/settings/settings.dart';
 import 'package:flutter_starter/l10n/l10n.dart';
 import 'package:get_it/get_it.dart';
 
 final globalNavigatorKey = GlobalKey<NavigatorState>();
-final _router = AppRouter(globalNavigatorKey);
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -35,15 +33,13 @@ class App extends StatelessWidget {
               GetIt.I<LanguageBloc>()..add(const LanguageStarted()),
         ),
       ],
-      child: _AppWidget(router: _router),
+      child: const _AppView(),
     );
   }
 }
 
-class _AppWidget extends StatelessWidget {
-  const _AppWidget({Key? key, required this.router}) : super(key: key);
-
-  final AppRouter router;
+class _AppView extends StatelessWidget {
+  const _AppView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +49,7 @@ class _AppWidget extends StatelessWidget {
           builder: (context, themeState) {
             return MaterialApp.router(
               title: AppConfig.titleSiteWeb,
-              theme: themeState.theme.toThemeData(),
+              theme: themeState.theme.toTheme().data,
               localizationsDelegates: const [
                 AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,
@@ -65,8 +61,8 @@ class _AppWidget extends StatelessWidget {
                   : null,
               debugShowCheckedModeBanner: false,
               supportedLocales: AppLocalizations.supportedLocales,
-              routerDelegate: router.delegate(),
-              routeInformationParser: router.defaultRouteParser(),
+              routerDelegate: AppRouter.router.routerDelegate,
+              routeInformationParser: AppRouter.router.routeInformationParser,
             );
           },
         );

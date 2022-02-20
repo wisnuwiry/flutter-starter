@@ -16,6 +16,13 @@ A Flutter Starter Project created by the [Wisnu G. Saputra][website_link].
 
 ---
 
+## Preview 🪟
+
+| Android     | iOS         | Web         |
+| ----------- | ----------- | ----------- |
+| ![Android][android_preview] | ![iOS][ios_preview]  | ![Web][web_preview] |
+
+
 ## Getting Started 🚀
 
 This project contains 3 flavors:
@@ -41,7 +48,7 @@ _\*Flutter Starter works on iOS, Android, and Web._
 
 ---
 
-## Build App
+## Build App 🔥
 
 To build APK desired flavor use the following commands:
 
@@ -183,31 +190,29 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 
 ## Working with Route Navigation 🧭
 
-### Now run the generator
+> More info: https://gorouter.dev/
 
-```bash
-flutter packages pub run build_runner watch
-```
+## Working with Atomic Design Component 💡
 
-We use the watch flag to watch for file changes which will rebuild the generated files when necessary. If you would like to only generate files once and exit after use:
+> More info about **Atomic Design:** https://atomicdesign.bradfrost.com/
 
-```bash
-flutter packages pub run build_runner build
-```
 
-When generating route encountered this error:
+## Package Used 📦
 
-```
-[SEVERE] Conflicting outputs were detected and the build is unable to prompt for permission to remove them. These outputs must be removed manually or the build can be run with `--delete-conflicting-outputs`. The outputs are: lib/app/routes.gr.dart
-```
-
-You must add `--delete-conflicting-outputs` when generating, Ex:
-
-```bash
-flutter packages pub run build_runner build --delete-conflicting-outputs
-```
-
-> More info: https://autoroute.vercel.app/
+| Name     | Category         | Info         |
+| ----------- | ----------- | ----------- |
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc) | State Management  | - |
+| [bloc_concurrency](https://pub.dev/packages/bloc_concurrency) | State Management  | - |
+| [dartz](https://pub.dev/packages/dartz) | Functional Programming  | - |
+| [equatable](https://pub.dev/packages/equatable) | Equality of Object  | - |
+| [get_it](https://pub.dev/packages/get_it) | Dependency Injection  | - |
+| [go_router](https://pub.dev/packages/go_router) | Routing Navigator v2  | - |
+| [hive](https://pub.dev/packages/hive) | Local DataBase  | - |
+| [intl](https://pub.dev/packages/intl) | internationalization and localization | - |
+| [internet_connection_checker](https://pub.dev/packages/internet_connection_checker) | Utility  | - |
+| [json_annotation](https://pub.dev/packages/json_annotation) | Utility | - |
+| [path_provider](https://pub.dev/packages/path_provider) | Utility | - |
+| [stream_transformer](https://pub.dev/packages/stream_transformer) | Utility | - |
 
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
 [internationalization_link]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
@@ -228,3 +233,6 @@ flutter packages pub run build_runner build --delete-conflicting-outputs
 [pull_request_badge]: https://img.shields.io/github/issues-pr/wisnuwiry/flutter-starter.svg?style=flat&logo=github&colorB=brightgreen&label=Pull+Request
 [dart_language_badge]: https://img.shields.io/badge/Language-Dart-blue
 [pr_welcome_badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[android_preview]: https://i.ibb.co/qNWSJ6K/android-preview.png
+[ios_preview]: https://i.ibb.co/613Gmx8/ios-preview.png
+[web_preview]: https://i.ibb.co/Y0dY43m/web-preview.png

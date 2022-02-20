@@ -1,4 +1,6 @@
 class MainAssets {
+  const MainAssets._();
+
   // -------------------------------- IMAGES -----------------------------------
 
   static const String _baseImagePath = 'assets/images';

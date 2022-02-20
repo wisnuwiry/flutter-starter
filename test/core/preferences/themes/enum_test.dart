@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_starter/core/preferences/preferences.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -15,11 +14,11 @@ void main() {
     });
 
     test('Should convert from AppTheme enum to ThemeData', () {
-      expect(tDark.toThemeData(), isA<ThemeData>());
-      expect(tLight.toThemeData(), isA<ThemeData>());
+      expect(tDark.toTheme(), isA<BaseTheme>());
+      expect(tLight.toTheme(), isA<BaseTheme>());
 
-      expect(tDark.toThemeData().primaryColor, AppColors.primaryColor);
-      expect(tLight.toThemeData().primaryColor, AppColors.primaryColor);
+      expect(tDark.toTheme().data.primaryColor, AppColors.primaryColor);
+      expect(tLight.toTheme().data.primaryColor, AppColors.primaryColor);
     });
   });
 }

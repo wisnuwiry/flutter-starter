@@ -7,15 +7,14 @@ class AppConfig {
   //                               CORE CONFIG                                \\
   // ---------------------------------------------------------------------------
 
-  /// Title Apps in Browser Tab
+  /// This config for:
+  /// - Title App in Browser Tab
+  /// - Title App in Recent Apps on Android & iOS
   ///
-  /// This config set `title` in `MaterialApp`
   /// And by default title in `MaterialApp` change
-  /// title in Tab Browser on your web apps
-  static const String titleSiteWeb = 'Farm Project';
+  static const String titleSiteWeb = 'Flutter Starter';
 
-  /// Base URL API Apps
-
+  /// Base URL API App
   static const FlavorConfig<String> baseUrl = FlavorConfig<String>(
     /// Base URL in Production Mode
     prod: 'https://api.stackexchange.com/2.2',
