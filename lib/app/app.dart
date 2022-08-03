@@ -48,7 +48,7 @@ class _AppView extends StatelessWidget {
         return BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, themeState) {
             return MaterialApp.router(
-              title: AppConfig.titleSiteWeb,
+              title: AppConfig.appName,
               theme: themeState.theme.toTheme().data,
               localizationsDelegates: const [
                 AppLocalizations.delegate,
@@ -62,6 +62,8 @@ class _AppView extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               supportedLocales: AppLocalizations.supportedLocales,
               routerDelegate: AppRouter.router.routerDelegate,
+              routeInformationProvider:
+                  AppRouter.router.routeInformationProvider,
               routeInformationParser: AppRouter.router.routeInformationParser,
             );
           },

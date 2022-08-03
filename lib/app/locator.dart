@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_starter/app/config.dart';
 import 'package:flutter_starter/core/core.dart';
 import 'package:flutter_starter/features/settings/settings.dart';
@@ -74,6 +75,7 @@ Future<void> setupLocator() async {
 
 Future<void> _setupCore() async {
   EquatableConfig.stringify = AppConfig.autoStringifyEquatable;
+  await dotenv.load(fileName: 'assets/.env');
 
   // External
   getIt.registerLazySingleton(InternetConnectionChecker.new);

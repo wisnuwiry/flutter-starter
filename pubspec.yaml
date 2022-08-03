@@ -9,30 +9,31 @@ environment:
 dependencies:
   bloc_concurrency: ^0.2.0
   dartz: ^0.10.1
-  dio: ^4.0.4
+  dio: ^4.0.6
   equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_dotenv: ^5.0.2
   flutter_localizations:
     sdk: flutter
   get_it: ^7.2.0
-  go_router: ^3.0.1
-  hive: ^2.0.5
-  internet_connection_checker: ^0.0.1+3
+  go_router: ^4.2.4
+  hive: ^2.2.3
+  internet_connection_checker: ^0.0.1+4
   intl: ^0.17.0
-  json_annotation: ^4.4.0
-  path_provider: ^2.0.8
+  json_annotation: ^4.6.0
+  path_provider: ^2.0.11
   stream_transform: ^2.0.0
 
 dev_dependencies:
-  bloc_test: ^9.0.2
-  build_runner: ^2.1.7
+  bloc_test: ^9.0.3
+  build_runner: ^2.2.0
   flutter_test:
     sdk: flutter
-  json_serializable: ^6.1.4
-  mocktail: ^0.2.0
-  very_good_analysis: ^2.4.0
+  json_serializable: ^6.3.1
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.0.1
 
 flutter:
   uses-material-design: true
@@ -42,3 +43,4 @@ flutter:
     - assets/images/
     - assets/images/bitmap/
     - assets/images/flags/
+    - assets/.env

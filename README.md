@@ -31,6 +31,15 @@ This project contains 3 flavors:
 - staging
 - production
 
+
+For the first step you need to set the environment variable first. Copy the `assets/.env.example` file to `assets/.env` then fill in all the required fields. To preview the environment variables like this:
+
+```
+BASE_URL_PROD = 
+BASE_URL_STG  = 
+BASE_URL_DEV  = 
+```
+
 To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
 
 ```sh

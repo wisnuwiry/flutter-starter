@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_starter/app/flavor.dart';
 import 'package:flutter_starter/core/core.dart';
 
@@ -12,18 +13,18 @@ class AppConfig {
   /// - Title App in Recent Apps on Android & iOS
   ///
   /// And by default title in `MaterialApp` change
-  static const String titleSiteWeb = 'Flutter Starter';
+  static const String appName = 'Flutter Starter';
 
   /// Base URL API App
-  static const FlavorConfig<String> baseUrl = FlavorConfig<String>(
+  static FlavorConfig<String> baseUrl = FlavorConfig<String>(
     /// Base URL in Production Mode
-    prod: 'https://api.stackexchange.com/2.2',
+    prod: dotenv.get('BASE_URL_PROD'),
 
     /// Base URL in Development Mode
-    dev: 'https://api.stackexchange.com/2.2',
+    dev: dotenv.get('BASE_URL_DEV'),
 
     /// Base URL in Staging Mode
-    staging: 'https://api.stackexchange.com/2.2',
+    staging: dotenv.get('BASE_URL_STG'),
   );
 
   // ---------------------------------------------------------------------------
