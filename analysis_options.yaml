@@ -22,3 +22,4 @@ linter:
     library_private_types_in_public_api: false
     argument_type_not_assignable: false
     implicit_dynamic_method: false
+    flutter_style_todos: false
