@@ -44,7 +44,8 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
       );
     } catch (exception, stackTrace) {
       exception.recordError(
-        RecordErrorParams(exception: exception, stackTrace: stackTrace),
+        exception: exception,
+        stackTrace: stackTrace,
       );
     }
   }
@@ -60,9 +61,7 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
         add(const LanguageStarted());
       }
     } catch (exception, stackTrace) {
-      exception.recordError(
-        RecordErrorParams(exception: exception, stackTrace: stackTrace),
-      );
+      exception.recordError(stackTrace: stackTrace);
     }
   }
 

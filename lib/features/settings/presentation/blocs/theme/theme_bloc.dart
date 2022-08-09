@@ -32,9 +32,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
         ),
       );
     } catch (exception, stackTrace) {
-      exception.recordError(
-        RecordErrorParams(exception: exception, stackTrace: stackTrace),
-      );
+      exception.recordError(stackTrace: stackTrace);
     }
   }
 
@@ -46,9 +44,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
         add(const ThemeStarted());
       }
     } catch (exception, stackTrace) {
-      exception.recordError(
-        RecordErrorParams(exception: exception, stackTrace: stackTrace),
-      );
+      exception.recordError(stackTrace: stackTrace);
     }
   }
 }
