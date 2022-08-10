@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/l10n/l10n.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../helpers/helpers.dart';
@@ -12,7 +14,17 @@ void main() {
   group('core/pages/', () {
     testWidgets('Render Not Found Page', (tester) async {
       // First render Page
-      await tester.pumpApp(const NotFoundPage());
+      await tester.pumpWidget(
+        MaterialApp(
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+          ],
+          theme: ThemeData.light(),
+          home: const NotFoundPage(),
+        ),
+      );
 
       // Check text 404 is available or not
       final text404 = find.text('404');

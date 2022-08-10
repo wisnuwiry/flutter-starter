@@ -10,11 +10,11 @@ void main() {
       const expectedCodeObject = <Object, Object>{};
 
       // actual
-      const actualCodeInt = CacheException(message: 'test', code: 500);
+      const actualCodeInt = GeneralCacheException(message: 'test', code: 500);
       const actualCodeString =
-          CacheException(message: 'test', code: 'INTERNAL_SERVER_ERROR');
+          GeneralCacheException(message: 'test', code: 'INTERNAL_SERVER_ERROR');
       const actualCodeObject =
-          CacheException(message: 'test', code: <Object, Object>{});
+          GeneralCacheException(message: 'test', code: <Object, Object>{});
 
       // assert
       expect(actualCodeInt.code, expectedCodeInt);
@@ -27,7 +27,7 @@ void main() {
       const exception = NotFoundCacheException(message: 'message');
 
       // assert
-      expect(exception, isA<CacheException>());
+      expect(exception, isA<GeneralCacheException>());
     });
 
     test('ExpiredCacheException should be subclass of CacheException', () {
@@ -35,20 +35,20 @@ void main() {
       const exception = ExpiredCacheException(message: 'message');
 
       // assert
-      expect(exception, isA<CacheException>());
+      expect(exception, isA<GeneralCacheException>());
     });
 
     test('Shoud be valid toString() override method', () {
       // arrange
       const baseExceptionString =
-          'CacheException(message: Test Message, code: Test Code)';
+          'GeneralCacheException(message: Test Message, code: Test Code)';
       const notFoundExceptionString =
           'NotFoundCacheException(message: Test Message, code: Test Code)';
       const expiredExceptionString =
           'ExpiredCacheException(message: Test Message, code: Test Code)';
 
       // actual
-      final baseExceptionResult = const CacheException(
+      final baseExceptionResult = const GeneralCacheException(
         message: 'Test Message',
         code: 'Test Code',
       ).toString();

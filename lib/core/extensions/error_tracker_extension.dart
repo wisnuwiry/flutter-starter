@@ -1,5 +1,4 @@
-import 'package:flutter_starter/features/settings/settings.dart';
-import 'package:get_it/get_it.dart';
+import 'dart:developer';
 
 extension RecordErrorExtensions on Object {
   void recordError({
@@ -7,12 +6,14 @@ extension RecordErrorExtensions on Object {
     Object? stackTrace,
     String? reason,
   }) {
-    GetIt.I<RecordErrorUseCase>()(
-      RecordErrorParams(
-        exception: exception ?? this,
-        stackTrace: stackTrace,
-        reason: reason,
-      ),
+    // TODO: Implement Logging Error in this body,
+    // like Sentry of Firebase Crashlytics http://sentry.io
+    log(
+      reason ?? exception.toString(),
+      name: 'ERROR',
+      stackTrace: stackTrace is StackTrace?
+          ? stackTrace
+          : StackTrace.fromString(stackTrace.toString()),
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/features/home/home.dart';
-import 'package:flutter_starter/features/settings/settings.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -14,13 +13,7 @@ class AppRouter {
       // Home Module
       GoRoute(
         path: '/',
-        builder: (context, state) => const MainPage(),
-      ),
-
-      // Settings Module
-      GoRoute(
-        path: '/settings',
-        builder: (context, state) => const SettingsPage(),
+        builder: (context, state) => const HomePage(),
       ),
     ],
     errorBuilder: (context, state) {

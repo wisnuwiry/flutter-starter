@@ -57,6 +57,10 @@ unlinked_spec.ds
 .fvm/
 .metadata
 
+# Mason Related
+.mason/
+mason-lock.json
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
@@ -100,10 +104,6 @@ unlinked_spec.ds
 
 # Coverage
 coverage/
-
-# Submodules
-!pubspec.lock
-packages/**/pubspec.lock
 
 # Web related
 lib/generated_plugin_registrant.dart

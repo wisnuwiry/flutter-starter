@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_starter/app/config.dart';
 import 'package:flutter_starter/core/core.dart';
-import 'package:flutter_starter/features/settings/settings.dart';
+import 'package:flutter_starter/features/auth/auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -21,52 +21,19 @@ Future<void> setupLocator() async {
 
   // ---------------------------------- AUTH -----------------------------------
 
-  // Data
-
   // Domain
+
+  // Repository
+  getIt.registerLazySingleton<AuthRepository>(
+    () => AuthRepositoryImpl(httpClient: getIt(), cacheClient: getIt()),
+  );
+
+  // UseCase
+  getIt.registerLazySingleton(() => LoginUseCase(getIt()));
 
   // Presentation
 
   // -------------------------------- END AUTH ---------------------------------
-
-  // -------------------------------- SETTINGS ---------------------------------
-
-  // Data
-  getIt.registerLazySingleton<SettingsLocalDataSource>(
-    () => SettingsLocalDataSourceImpl(getIt()),
-  );
-  getIt.registerLazySingleton<SettingsRepository>(
-    () => SettingsRepositoryImpl(
-      localDataSource: getIt(),
-    ),
-  );
-
-  // Domain
-  getIt.registerLazySingleton(() => GetLanguageSettingUseCase(getIt()));
-  getIt.registerLazySingleton(() => GetSettingsUseCase(getIt()));
-  getIt.registerLazySingleton(() => GetThemeSettingUseCase(getIt()));
-  getIt.registerLazySingleton(() => SaveLanguageSettingUseCase(getIt()));
-  getIt.registerLazySingleton(() => SaveSettingsUseCase(getIt()));
-  getIt.registerLazySingleton(() => SaveThemeSettingUseCase(getIt()));
-  getIt.registerLazySingleton(GetSupportedLanguageUseCase.new);
-  getIt.registerLazySingleton(RecordErrorUseCase.new);
-
-  // Presentation
-  getIt.registerFactory(
-    () => LanguageBloc(
-      getLanguageSetting: getIt(),
-      saveLanguageSetting: getIt(),
-      getSupportedLanguage: getIt(),
-    ),
-  );
-  getIt.registerFactory(
-    () => ThemeBloc(
-      getThemeSetting: getIt(),
-      saveThemeSetting: getIt(),
-    ),
-  );
-
-  // ------------------------------ END SETTINGS -------------------------------
 
   // |+-----------------------------------------------------------------------+|
   // |+                             END FEATURES                              +|

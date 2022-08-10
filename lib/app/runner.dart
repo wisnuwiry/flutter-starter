@@ -10,6 +10,8 @@ void runnerApp() {
 
   runZonedGuarded(
     () => runApp(const App()),
-    (error, stackTrace) => error.recordError(stackTrace: stackTrace),
+    (error, stackTrace) {
+      error.recordError(stackTrace: stackTrace);
+    },
   );
 }

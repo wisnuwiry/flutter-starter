@@ -3,6 +3,11 @@ image: cirrusci/flutter
 stages:
   - testing
 
+setup_env:
+  stage: testing
+  script:
+    - cp assets/.env.example assets/.env
+
 get_dependency:
   stage: testing
   script:

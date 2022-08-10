@@ -3,6 +3,7 @@ include: package:very_good_analysis/analysis_options.2.4.0.yaml
 analyzer:
   exclude: [
     build/**, 
+    bricks/**/__brick__/**,
     lib/**.freezed.dart, 
     lib/**.g.dart,
     lib/**.gr.dart

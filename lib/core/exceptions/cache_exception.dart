@@ -1,16 +1,21 @@
-class CacheException implements Exception {
-  const CacheException({required this.message, this.code});
+import 'package:flutter_starter/core/core.dart';
 
-  final String message;
-  final Object? code;
+class GeneralCacheException extends ErrorException {
+  const GeneralCacheException({
+    required String message,
+    Object? code,
+  }) : super(
+          message: message,
+          code: code,
+        );
 
   @override
-  String toString() => 'CacheException(message: $message, code: $code)';
+  String toString() => 'GeneralCacheException(message: $message, code: $code)';
 }
 
 /// Throws when cache is empty or not found
 ///
-class NotFoundCacheException extends CacheException {
+class NotFoundCacheException extends GeneralCacheException {
   const NotFoundCacheException({
     required String message,
     Object? code,
@@ -24,7 +29,7 @@ class NotFoundCacheException extends CacheException {
 }
 
 /// Throw when cache is expired
-class ExpiredCacheException extends CacheException {
+class ExpiredCacheException extends GeneralCacheException {
   const ExpiredCacheException({
     required String message,
     Object? code,
