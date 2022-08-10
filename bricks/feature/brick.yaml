@@ -1,0 +1,12 @@
+name: feature
+description: A brick to create new feature module.
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.26 <0.1.0"
+
+vars:
+  feature_name:
+    type: string
+    description: Your Feature name
+    default: Home
+    prompt: What is your feature name?

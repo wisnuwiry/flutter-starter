@@ -1,0 +1,17 @@
+name: page
+description: A brick to create new page
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.26 <0.1.0"
+
+vars:
+  name:
+    type: string
+    description: Your page name
+    default: Home
+    prompt: What is your page name?
+  useSection:
+    default: true
+    type: boolean
+    description: Has Section in page
+    prompt: Does this page use section?

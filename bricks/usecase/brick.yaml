@@ -1,0 +1,24 @@
+name: usecase
+description: A brick to create new usecase
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.26 <0.1.0"
+vars:
+  name:
+    type: string
+    description: Your usecase name
+    default: Dash
+    prompt: What is your usecase name?
+  type:
+    type: enum
+    default: future
+    description: The asyncronous type
+    prompt: Choose Future or Stream?
+    values:
+      - future
+      - stream
+  success_type:
+    type: string
+    description: Your success return data type
+    default: null
+    prompt: What is your success return data type?

@@ -1,0 +1,12 @@
+bricks:
+  feature:
+    path: bricks/feature
+  entity:
+    path: bricks/entity
+  page:
+    path: bricks/page
+  repository:
+    path: bricks/repository
+  usecase:
+    path: bricks/usecase
+  

@@ -1,0 +1,20 @@
+name: repository
+description: A new brick created with the Mason CLI.
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.26 <0.1.0"
+vars:
+  name:
+    type: string
+    description: Your repository name
+    default: Dash
+    prompt: What is your repository name?
+  handler:
+    type: enum
+    default: network
+    description: The handler for this repository
+    prompt: What is the handler for this repository?
+    values:
+      - network
+      - cache
+      - both
